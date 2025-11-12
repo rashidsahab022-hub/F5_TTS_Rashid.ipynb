@@ -1,0 +1,20 @@
+# ==============================
+# ✅ F5-TTS Working Auto Setup (Updated - Nov 2025)
+# ==============================
+
+# Clean any old installations
+!pip uninstall -y torch torchvision torchaudio
+
+# ✅ Install compatible PyTorch version (works on GPU & CPU both)
+!pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu121
+
+# ✅ Install the latest F5-TTS directly from GitHub
+!pip install git+https://github.com/SWivid/F5-TTS.git
+
+# ✅ Clean output
+from IPython.display import clear_output
+clear_output()
+print("✅ Installation completed successfully. Launching Gradio interface...")
+
+# ✅ Launch the Gradio App (with share link)
+!f5-tts_infer-gradio --share
